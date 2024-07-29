@@ -3,8 +3,12 @@ import { Link} from "react-router-dom";
 import { VacancyList } from "./VacancyList";
 import useFetch from "../../components/hooks/useFetch";
 
+
 const Vacancy = () => {
-  const {data, loding} = useFetch()
+  const {data, loading} = useFetch()
+
+  
+ 
   return (
       <div id="vacancies">
         <div className="container">

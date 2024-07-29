@@ -1,39 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../../components/hooks/useFetch";
+import EventsList from "./EventsList";
 
 
 
 function Events() {
+const events_url = 'http://3.38.98.134/events' 
+      
+const  { data, loading } = useFetch({url: events_url});
+
+
   return (
     <div id="events">
       <div className="container">
         <div className="btn1">
           <button>Добавить мероприятиe</button>
         </div>
-        <Link to={"/eventDetals"}>
-        <div className="events">
-          <div className="events--foto">
-          <img src="https://devkg.com/images/events/e975ab09a375897590241aaec11d51fa.png" data-v-17b3db24="img"/>
-            <div className="events--foto__text">
-              <h4>
-                25 августа 2024 <span>17:00</span>
-              </h4>
-              <h1>InkubasiaLAB 2024’s Machine Learning AI Bootcamp</h1>
-
-              <div className="events--foto__text--par">
-                <div className="events--foto__text--par__kor1">
-                  <h6>Организатор</h6>
-                  <h2>InkubasiaLAB</h2>
-                </div>
-                <div className="events--foto__text--par__kor2">
-                  <h6>Когда</h6>
-                  <h2>Коворкинг-резорт ololoAkJol</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </Link>
+        {data &&
+                  data.map((el: any, idx: number) => {
+                    return (
+                      <EventsList
+                        key={idx}
+                        location={el.location}
+                        name={el.name}
+                        organization_name={el.organization_name}
+                        date={el.date}
+                        
+                      />
+                    );
+                  })}
       </div>
     </div>
   )
