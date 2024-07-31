@@ -2,12 +2,23 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../components/hooks/useFetch";
 import VideoList from "./VideoList";
+import loadingImg from "../../assets/images/loading.svg"
 
 
 const Video = () => {
   const meetups_url = 'http://3.38.98.134/meetups'
 
   const {data, loading} = useFetch({url: meetups_url})
+  if (loading) {
+    return <div className="loading" style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+
+    }}>
+      <img src={loadingImg} alt="img" />
+    </div>
+  }
 
  
   return (

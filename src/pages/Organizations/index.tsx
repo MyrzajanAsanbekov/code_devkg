@@ -2,13 +2,23 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../components/hooks/useFetch";
 import OrganizationList from "./OrganizationList";
+import loadingImg from "../../assets/images/loading.svg"
+
 
 const Organizations = () => {
   const { data, loading } = useFetch({
     url: "http://3.38.98.134/organizations",
   });
 
-
+  if (loading) {
+    return <div className="loading" style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }}>
+      <img src={loadingImg} alt="img" />
+    </div>
+  }
   
   return (
     <div id="organizations">
