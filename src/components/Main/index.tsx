@@ -11,6 +11,7 @@ import VideoDetail from "../../pages/VideoDetail";
 import EventDetals from "../../pages/EventDetals";
 import Hero from "../../pages/Hero";
 import Vacancies from "../../pages/Vacancy";
+import Login from "../../pages/Login/Login";
 
 const Main = () => {
   return (
@@ -27,7 +28,7 @@ const Main = () => {
         <Route path="/videoDetail" element={<VideoDetail />} />
         <Route path="/eventDetals" element={<EventDetals />} />
         <Route path="" element={<EventDetals />} />
-
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

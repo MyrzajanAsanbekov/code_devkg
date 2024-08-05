@@ -43,7 +43,7 @@ const Header: React.FC = () => {
             <span>
               <AiOutlineLogin />
             </span>
-            <button>Войти</button>
+            <button onClick={() => nav("/login")}>Войти</button>
           </div>
         </div>
       </div>
