@@ -1,12 +1,29 @@
-import React, { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {  NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
 import { TbMenu2 } from "react-icons/tb";
 import { IoCloseSharp } from "react-icons/io5";
+import { isUserloggedin } from "../../Utils";
+import Cookies from "js-cookie";
 
 const Header: React.FC = () => {
-  const [menu, setMenu] = useState<boolean>(false);
   const nav = useNavigate()
+  const location = useLocation()
+  const [isLoggedin, setIsLogin] = useState(false)
+  const [menu, setMenu] = useState<boolean>(false);
+  
+
+  useEffect(() => {
+    const Loggedin = isUserloggedin()
+    setIsLogin(Loggedin)
+    console.log("login", Loggedin);
+  }, [isLoggedin, setIsLogin, location.pathname])
+
+
+  const Logout = () => {
+    Cookies.remove("authToken")
+    setIsLogin(false)
+  }
   return (
     <div id="header">
       <div className="container">
@@ -38,12 +55,23 @@ const Header: React.FC = () => {
             <NavLink to={"/organization"}>Организации</NavLink>
             <NavLink to={"/community"}>Сообщество</NavLink>
           </nav>
-          <div className="header--btn">
-            <span>
-              <AiOutlineLogin />
-            </span>
-            <button onClick={() => nav("/auth")}>Войти</button>
-          </div>
+         {isLoggedin ? (
+           <div onClick={() => Logout()} className="header--btn">
+           <span>
+             <AiOutlineLogin />
+           </span>
+           <button>Выйти</button>
+         </div>
+         ) : (
+          <div onClick={() => nav("/auth")} className="header--btn">
+          <span>
+            <AiOutlineLogin />
+          </span>
+          <button>Войти</button>
+        </div>
+         )
+         
+          }
         </div>
       </div>
       {menu && (

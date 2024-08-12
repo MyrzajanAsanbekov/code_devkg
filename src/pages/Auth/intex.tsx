@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Cookies from "js-cookie"
 
 const loginAPI = 'http://3.38.98.134/auth/login';
 const singupAPI = 'http://3.38.98.134/auth/signup';
@@ -15,7 +16,7 @@ const Auth = () => {
  
     const handleAuth = (e: React.FocusEvent<HTMLFormElement>) => {
          e.preventDefault()
-         if (!userName || !password) {
+         if (!userName || !password) {  
             alert("Please fill all the fields")
          }
          if (!isLoadingTab && password !== confirmPassword) {
@@ -31,13 +32,13 @@ const Auth = () => {
                 const {token , message} = res.data
                 if (res.data.success) {
                     console.log("data", res.data);
-                    
+                    Cookies.set('AuthToken', token)
                     alert(message)
+                    nav("/")
                 } else {
                     alert(message)
                 }
                 console.log(res.data);
-                
             })
             .catch(err => {
                 console.log(err);
