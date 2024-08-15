@@ -26,7 +26,7 @@ const Vacancy = () => {
           <div className="vacancies">
             <div className="vacancies__content">
               <div className="filter">
-                <Link to={"/"}>
+                <Link to={"/addVacancy"}>
                   <button>Добавить вакансию</button>
                 </Link>
               </div>
