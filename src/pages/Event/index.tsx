@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useFetch from "../../components/hooks/useFetch";
 import EventsList from "./EventsList";
 import loadingImg from "../../assets/images/loading.svg"
@@ -9,6 +9,7 @@ import loadingImg from "../../assets/images/loading.svg"
 
 function Events() {
 const events_url = 'http://3.38.98.134/events' 
+const nav = useNavigate()
       
 const  { data, loading } = useFetch({url: events_url});
 
@@ -26,7 +27,7 @@ if (loading) {
     <div id="events">
       <div className="container">
         <div className="btn1">
-          <button>Добавить мероприятиe</button>
+          <button onClick={() => nav("/addEvent")}>Добавить мероприятиe</button>
         </div>
         {data &&
                   data.map((el: any, idx: number) => {

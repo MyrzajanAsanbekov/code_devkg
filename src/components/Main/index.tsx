@@ -10,8 +10,10 @@ import DetailPosition from "../../pages/DetailPosition";
 import VideoDetail from "../../pages/VideoDetail";
 import EventDetals from "../../pages/EventDetals";
 import Hero from "../../pages/Hero";
-import Vacancies from "../../pages/Vacancy";
-import Login from "../../pages/Login/Login";
+import AddVacancy from "../../pages/AddVacancy";
+import Auth from "../../pages/Auth";
+import RouterProtector from "../RouterProtector";
+import AddEvent from "../../pages/AddEvent";
 
 const Main = () => {
   return (
@@ -28,7 +30,9 @@ const Main = () => {
         <Route path="/videoDetail" element={<VideoDetail />} />
         <Route path="/eventDetals" element={<EventDetals />} />
         <Route path="" element={<EventDetals />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="auth" element={<Auth/>}/>
+        <Route path="/addVacancy" element={<RouterProtector><AddVacancy/></RouterProtector>}/>
+        <Route path="addEvent" element={<RouterProtector><AddEvent/></RouterProtector>}/>
       </Routes>
     </div>
   );
