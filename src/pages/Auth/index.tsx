@@ -1,9 +1,8 @@
 
-import axios from "axios";
 import React, { useState } from "react";
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../components/hooks/useAuth";
+import Cookies from "js-cookie";
 
 const loginApi = "http://3.38.98.134/auth/login";
 const sighUpApi = "http://3.38.98.134/auth/signup";
@@ -29,7 +28,7 @@ const Auth = () => {
     }
     const res: any = await login(userName, password)
     if(res?.success ){
-      Cookies.set('authtoken', res.token);
+     Cookies.set('authtoken', res.token);
       nav('/')
     } else {
       alert(res.message)

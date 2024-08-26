@@ -14,6 +14,8 @@ import AddVacancy from "../../pages/AddVacancy";
 import Auth from "../../pages/Auth";
 import RouterProtector from "../RouterProtector";
 import AddEvent from "../../pages/AddEvent";
+import OfflineEvent from "../../pages/OfflineEvent";
+import OnlineEvent from "../../pages/OnlineEvent";
 
 const Main = () => {
   return (
@@ -33,6 +35,9 @@ const Main = () => {
         <Route path="auth" element={<Auth/>}/>
         <Route path="/addVacancy" element={<RouterProtector><AddVacancy/></RouterProtector>}/>
         <Route path="addEvent" element={<RouterProtector><AddEvent/></RouterProtector>}/>
+        <Route path="offlineEvent" element={<OfflineEvent/>}/>
+        <Route path="onlineEvent" element={<OnlineEvent/>}/>
+
       </Routes>
     </div>
   );

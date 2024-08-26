@@ -25,10 +25,11 @@
             .blocks {
                 width: 550px;
                 height: 120px;
-                margin-left: 130px;
+                // margin-left: 130px;
                 background: rgb(227, 227, 227);
                 margin-top: 30px;
                 border-radius: 5px;
+                color: black;
                 img {
                     object-fit: contain;
                     margin-left: -30px;
@@ -52,6 +53,7 @@
                 background: rgb(227, 227, 227);
                 margin-top: 30px;
                 border-radius: 5px;
+                color: black;
                 img {
                     object-fit: contain;
                     margin-left: -30px;
