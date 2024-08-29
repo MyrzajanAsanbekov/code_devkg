@@ -6,6 +6,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { isUserLogeddin } from "../../Utils";
 import Cookies from "js-cookie";
 
+
 const Header: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false)
   const [menu, setMenu] = useState<boolean>(false);

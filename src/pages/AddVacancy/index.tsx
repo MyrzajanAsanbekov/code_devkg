@@ -1,77 +1,162 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { API } from '../../API';
+import { useNavigate } from 'react-router-dom';
 
 const AddVacancy = () => {
+  const nav = useNavigate()
+  const [vacancyValues, setVacancyValues] = useState({
+    nameCompany: "",
+    priceFrom: "",
+    priceTo: "", 
+    nameVacancy: "",
+    currency: "",
+    address: "",
+    salaryVacancy: "",
+    email: "",
+    phone: "",
+    location: ""
+  });
+
+  const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    let currentInput  = e.target.name
+    setVacancyValues({
+      ...vacancyValues,
+      [currentInput]: e.target.value
+    })
+  }
+
+  const handleAddVacancy = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+        const response = await axios.post(`${API}/jobs`, {
+            organization_name: vacancyValues.nameCompany,
+            price_from:vacancyValues.priceFrom,
+            price_to: vacancyValues.priceTo,
+            currency: 'currency',
+            position: vacancyValues.nameVacancy,
+            city: vacancyValues.address,
+            salary: vacancyValues.salaryVacancy,
+            phone: vacancyValues.phone,
+            email: vacancyValues.email,
+            type: 'type',
+            id: Math.random(),
+            slug: '',
+            location: "",
+            created_at: '',
+            updated_at: '',
+            is_archived: true,
+            gradient: 0,
+            workday: '',
+            organization_icon: '',
+            organization_icon_formats: [null]
+        });
+
+        if (response.data.success) {
+            
+        }
+        alert(response.data.message);
+    } catch (error) {
+        alert("Не удалось добавить вакансию");
+    }
+};
+
+
   return (
     <div id='addvacancy'>
       <div className="container">
-        <div className="addvacancy">
+        <form className='addVacancy' onSubmit={handleAddVacancy}>
+        <div className="addvacancy" >
           <h1>Добавить новую вакансию</h1>
           <p>
           Вакансия должна относится к сфере информационных технологий и будет опубликована после проверки модератором</p>
         </div>
-        <div className="organization">
-          <h2>Организация <span>*</span></h2>
-          <button>Создать или выбрать озганизацию</button>
-        </div>
-
-
         <div className="doljnost">
           <h2> Должность <span>*</span>  </h2>
-          <input type="text" /> <line>Например “Project Manager”</line>
+          <input 
+          name='nameVacancy'
+          value={vacancyValues.nameVacancy}
+          onChange={inputChangeHandler}
+          type="text" /> 
         </div>
-
-
         <div className="vacancy">
           <h2>Описание вакансии <span>*</span></h2>
-          <p>Здесь необходимо указать условия труда, требования и обязанности. <br />  Также вы можете указать краткое описание компании, например: <br />
-             “В дружный отдел дизайна игровой студии ”Bloody Fun” требуется проект менеджер со стажем” 
-             </p>
-          <input type="text" />
-           <div className="text">
-           <h4>Длина текста: 0 символов, минимально допустимое значение 200 символов
-          </h4>
+     <div className="discription">
+          <input
+          name='currency'
+          value={vacancyValues.currency}
+          onChange={inputChangeHandler}
+          type="message" />
+     </div>
+        </div>
+
+        <div className="input-vacan">
           
-           </div>
+        <div className="priceFrom">
+          <h2>Price From</h2>
+          <input
+           name='priceFrom'
+           value={vacancyValues.priceFrom}
+           onChange={inputChangeHandler}
+          type="text" />
+        
         </div>
 
-        <div className="telegram">
-          <h2>Telegram</h2>
-          <input type="text" /> <p>
-          Не обязательно заполнять все поля для контактов. Например если у <br /> вас нет почты или вы не хотите оставлять свой телеграм, оставьте поле пустым.</p>
-        </div>
 
-
-        <div className="skype">
-          <h2>Skype</h2>
-          <input type="text" />
+        <div className="priceTo">
+          <h2>Price To</h2>
+          <input
+           name='priceTo'
+           value={vacancyValues.priceTo}
+           onChange={inputChangeHandler}
+          type="text" />
         </div>
 
         <div className="email">
           <h2>E-Mail</h2>
-          <input type="text" />
+          <input
+          name='email'
+          value={vacancyValues.email}
+          onChange={inputChangeHandler}
+          type="text" />
         </div>
 
         <div className="iphone">
           <h2>Телефон</h2>
-          <input type="text" />
+          <input
+           name='phone'
+           value={vacancyValues.phone}
+           onChange={inputChangeHandler}
+          type="text" />
+        </div>
+        <div className="adress">
+          <h2>Location</h2>
+          <input
+          name='location'
+          value={vacancyValues.location}
+          onChange={inputChangeHandler}
+          type="text" />
         </div>
 
         <div className="tiping">
           <h2>Тип <span>*</span></h2>
-          <input type="file " name='resume' /> 
-          <p>
-          Обязательное поле в котором вы можете выбрать тип работы для <br /> вашей вакансии.</p>
-          <div className="important">
-            <span>Не заполненны обязательные поля: 
-              </span>
-              <line> Организация, Должность, Описание вакансии, Тип, Контакт</line>
-          </div>
-          <div className="btn">
-            <button>Продолжить</button>
-            <button>Сохранить</button>
-          </div>
+          <select
+              id="type"
+                  required
+                >
+                  <option value="for" >
+                    Выберите тип работы
+                  </option>
+                  <option value="full-time">Полная занятость</option>
+                  <option value="part-time">Частичная занятость</option>
+                  <option value="remote">Удаленная работа</option>
+                </select>
         </div>
-
+        </div>
+                <div className="btn">
+                 <button onClick={() => nav("/vacancies")}>Продолжить</button>
+                   </div>  
+        </form>
       </div>
       
     </div>
@@ -79,3 +164,5 @@ const AddVacancy = () => {
 };
 
 export default AddVacancy;
+
+
