@@ -1,6 +1,32 @@
 #addvacancy {
     .container {
+        width: 100%;
+        .modal {
+            .nav {
+                position: absolute;
+                width: 220px;
+                height: 100%;
+                background: rgb(226, 221, 221);
+
+                svg {
+                    margin: 20px;
+                }
+                a {
+                    display: flex;
+                    align-items: center;
+                    font-size: 23px;
+                    margin: 20px;
+                    margin-left: 20px;
+                    font-weight: 600;
+                    color: black;
+                    cursor: pointer;
+                }
+            }
+        }
+       .createvacancy {
+        margin-left: 200px;
         .addvacancy {
+        
             h1 {
                 margin-left: 130px;
                 color: rgb(11, 11, 50);
@@ -35,31 +61,6 @@
          
         }
 
-        .vacancy {
-            h2 {
-                font-size: 20px;
-                margin-left: 130px;
-                margin-top: 30px;
-                color: gray;
-                margin-bottom: 20px;
-              span {
-                    color: red;
-                } 
-                
-            }
-            .discription {
-                
-                input {
-                    margin-left: 130px;
-                    width: 37%;
-                    padding: 10px;
-                    padding-bottom: 150px;
-                    border: 2px solid gray;
-                    font-size: 20px;
-                }
-           
-            }
-        }
   .input-vacan {
     display: flex;
     flex-wrap: wrap;
@@ -197,20 +198,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    margin-left: 80px;
     margin-bottom: 50px;
     margin-top: 30px;
     button {
-        color: rgb(11, 11, 50);
-        width: 150px;
-        height: 40px;
-        background: rgb(188, 188, 188);
+        color: white;
+        width: 210px;
+        height: 50px;
+        background: #6fcf97;
         font-size: 18px;
         font-weight: 600;
         border-radius: 3px;
         cursor: pointer;
     }
 } 
+       }
     }
 }
