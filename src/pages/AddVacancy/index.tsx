@@ -136,7 +136,7 @@ const AddVacancy = () => {
            name='priceFrom'
            value={vacancyValues.priceFrom}
            onChange={inputChangeHandler}
-          type="text" />
+          type="number" />
         
         </div>
 
@@ -147,7 +147,7 @@ const AddVacancy = () => {
            name='priceTo'
            value={vacancyValues.priceTo}
            onChange={inputChangeHandler}
-          type="text" />
+          type="number" />
         </div>
 
         <div className="email">
@@ -156,7 +156,7 @@ const AddVacancy = () => {
           name='email'
           value={vacancyValues.email}
           onChange={inputChangeHandler}
-          type="text" />
+          type="email" />
         </div>
 
         <div className="iphone">
@@ -165,7 +165,7 @@ const AddVacancy = () => {
            name='phone'
            value={vacancyValues.phone}
            onChange={inputChangeHandler}
-          type="text" />
+          type="tel" />
         </div>
         <div className="adress">
           <h2>Location</h2>
