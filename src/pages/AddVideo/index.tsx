@@ -34,7 +34,7 @@ const AddVideo = () => {
                     <img src={video} alt="img" />
                     <p>Записи онлайн и оффлайн конференций специалистов для <br />  обмена опытом в неформальной обстановке.</p>
                     <h2>Хотите добавить видео?</h2>
-                    <button>Добавить видео</button>
+                    <button onClick={() => nav("/AddVideoPage")}>Добавить видео</button>
                 </div>
             </div>
             

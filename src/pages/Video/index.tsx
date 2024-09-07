@@ -7,7 +7,7 @@ import loadingImg from "../../assets/images/loading.svg"
 
 const Video = () => {
   const meetups_url = 'http://3.38.98.134/meetups'
-
+  const nav = useNavigate()
   const {data, loading} = useFetch({url: meetups_url})
   if (loading) {
     return <div className="loading" style={{
@@ -26,7 +26,7 @@ const Video = () => {
       <div className="container">
         <div className="video">
           <div className="video--btn">
-            <button>Добавить видео</button>
+            <button onClick={() => nav("/addVideo")}>Добавить видео</button>
           </div>
           <h2>Все видео</h2>
           <div className="video--cards">

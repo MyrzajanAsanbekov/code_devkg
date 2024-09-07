@@ -1,0 +1,154 @@
+#videoPage {
+    .container {
+        width: 100%;
+        .modal {
+            .nav {
+                position: absolute;
+                width: 220px;
+                height: 570px;
+                background: rgb(226, 221, 221);
+
+                svg {
+                    margin: 20px;
+                }
+                a {
+                    display: flex;
+                    align-items: center;
+                    font-size: 23px;
+                    margin: 20px;
+                    margin-left: 20px;
+                    font-weight: 600;
+                    color: black;
+                    cursor: pointer;
+                }
+            }
+        }
+        .videoPage {
+            margin-left: 200px;
+            h1 {
+                margin-left: 130px;
+                font-size: 27px;
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 15px;
+                margin-left: 130px;
+            }
+            .videoInputs {
+                h2 {
+                    margin-left: 130px;
+                    font-size: 20px;
+                    color: gray;
+                    margin-top: 20px;
+                }
+                input {
+                    margin-left: 130px;
+                    margin-top: 20px;
+                }
+            }
+            .videoInputs1 {
+                h2 {
+                    margin-left: 130px;
+                    color: gray;
+                    font-size: 20px;
+                    margin-top: 20px;
+
+                    span {
+                        color: red;
+                        margin-left: 5px;
+                    }
+                }
+                input {
+                    margin-top: 20px;
+                    margin-left: 130px;
+                    width: 450px;
+                    height: 50px;
+                    border: 2px solid gray;
+                    padding: 10px;
+                    font-size: 20px;
+                }
+            }
+            .videoInputs2 {
+                h2 {
+                    margin-left: 130px;
+                    color: gray;
+                    font-size: 20px;
+                    margin-top: 20px;
+
+                    span {
+                        color: red;
+                        margin-left: 5px;
+                    }
+                }
+                input {
+                    margin-top: 20px;
+                    margin-left: 130px;
+                    width: 450px;
+                    height: 50px;
+                    border: 2px solid gray;
+                    padding: 10px;
+                    font-size: 20px;
+                }
+            }
+            .videoInputs3 {
+                h2 {
+                    margin-left: 130px;
+                    color: gray;
+                    font-size: 20px;
+                    margin-top: 20px;
+
+                    span {
+                        color: red;
+                        margin-left: 5px;
+                    }
+                }
+                input {
+                    margin-top: 20px;
+                    margin-left: 130px;
+                    width: 450px;
+                    height: 50px;
+                    border: 2px solid gray;
+                    padding: 10px;
+                    font-size: 20px;
+                }
+            }
+            .videoInputs4 {
+                h2 {
+                    margin-left: 130px;
+                    color: gray;
+                    font-size: 20px;
+                    margin-top: 20px;
+
+                    span {
+                        color: red;
+                        margin-left: 5px;
+                    }
+                }
+                input {
+                    margin-top: 20px;
+                    margin-left: 130px;
+                    width: 450px;
+                    height: 50px;
+                    border: 2px solid gray;
+                    padding: 10px;
+                    font-size: 20px;
+                }
+            }
+            .btns {
+                button {
+                    color: white;
+                    width: 210px;
+                    height: 45px;
+                    background: #6fcf97;
+                    font-size: 18px;
+                    font-weight: 600;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    margin-left: 130px;
+                    margin-top: 30px;
+                    margin-bottom: 100px;
+                }
+            }
+        }
+    }
+}
