@@ -1,28 +1,6 @@
 #addEvents{
   .container {
-    width: 100%;
-    .modal {
-      .nav {
-          position: absolute;
-          width: 220px;
-          height: 540px;
-          background: rgb(226, 221, 221);
-          margin-top: 160px;
-          svg {
-              margin: 20px;
-          }
-          a {
-              display: flex;
-              align-items: center;
-              font-size: 23px;
-              margin: 20px;
-              margin-left: 20px;
-              font-weight: 600;
-              color: black;
-              cursor: pointer;
-          }
-      }
-  }
+
   
   .addEvents{
     height: 700px;

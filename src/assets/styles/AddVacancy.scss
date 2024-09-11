@@ -1,28 +1,5 @@
 #addvacancy {
     .container {
-        width: 100%;
-        .modal {
-            .nav {
-                position: absolute;
-                width: 220px;
-                height: 100%;
-                background: rgb(226, 221, 221);
-
-                svg {
-                    margin: 20px;
-                }
-                a {
-                    display: flex;
-                    align-items: center;
-                    font-size: 23px;
-                    margin: 20px;
-                    margin-left: 20px;
-                    font-weight: 600;
-                    color: black;
-                    cursor: pointer;
-                }
-            }
-        }
        .createvacancy {
         margin-left: 200px;
         .addvacancy {
